@@ -1,5 +1,5 @@
-satsolver/satsolver
-generator/generator
+cmd/satsolver/satsolver
+cmd/generator/generator
 
 .idea
 .idea/

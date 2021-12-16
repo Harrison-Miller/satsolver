@@ -110,10 +110,22 @@ func reduce(f Formula) (Formula, error) {
 						}
 					} else {
 						// check for the unit rule
-						for _, literal := range c.L {
+						removedLiteralCount := 0
+						for k, literal := range c.L {
 							if literal.V == unit.V && literal.Negated == unit.Negated {
 								toRemove = append(toRemove, j)
 								break
+							}
+
+							// remove the opposite of literal from clause
+							if literal.V == unit.V && literal.Negated != unit.Negated {
+								nextF.C[j].L = append(nextF.C[j].L[:k-removedLiteralCount], nextF.C[j].L[k+1-removedLiteralCount:]...)
+								removedLiteralCount++
+
+								if len(nextF.C[j].L) == 0 {
+									// if there are no literals but the clause wasn't removed we failed
+									return Formula{}, fmt.Errorf("unsatisfiable")
+								}
 							}
 						}
 					}

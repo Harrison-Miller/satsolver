@@ -33,15 +33,9 @@ func TestComplex(t *testing.T) {
 	t.Run("(a v b v c) ^ (~a v ~b v c) ^ (a v ~b v ~c) ^ (~a v b v ~c)", func(t *testing.T) {
 		testSolver(t, "(a v b v c) ^ (~a v ~b v c) ^ (a v ~b v ~c) ^ (~a v b v ~c)", true)
 	})
-
-	// worst case 2^3 calls to reduce
+	
 	t.Run("(~a v ~b v ~c) ^ (~a v ~b v c) ^ (a v ~b v ~c) ^ (~a v b v ~c)", func(t *testing.T) {
 		testSolver(t, "(~a v ~b v ~c) ^ (~a v ~b v c) ^ (a v ~b v ~c) ^ (~a v b v ~c)", true)
-		// a=true, (~b v ~c) ^  (~b v c) ^ (b v ~c)
-		// a=true,b=true ~c ^ c
-		// a=true,b=false ~c
-
-		// c=true,a=false: ~b
 	})
 
 	t.Run("big", func(t *testing.T) {
