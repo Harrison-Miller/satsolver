@@ -57,18 +57,6 @@ func MaximumOccurrences(f Formula) *Variable {
 	return maxV
 }
 
-/*
-def get_weighted_counter(formula, weight=2):
-    counter = {}
-    for clause in formula:
-        for literal in clause:
-            if literal in counter:
-                counter[literal] += weight ** -len(clause)
-            else:
-                counter[literal] = weight ** -len(clause)
-    return counter
- */
-
 func JeroslowWang(f Formula) *Variable {
 	weights := map[*Variable]float64{}
 	for _, clause := range f.C {

@@ -1,5 +1,7 @@
 cmd/satsolver/satsolver
 cmd/generator/generator
+generator
+solver
 
 .idea
 .idea/

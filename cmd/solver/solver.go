@@ -30,6 +30,8 @@ func runFromFile(filepath string) {
 		os.Exit(1)
 	}
 
+	fmt.Println(formula)
+
 	I, err := satsolver.Solve(formula, satsolver.JeroslowWang)
 	if err != nil {
 		fmt.Println(err)

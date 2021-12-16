@@ -1,7 +1,6 @@
 package satsolver
 
 import (
-	"fmt"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
@@ -11,14 +10,12 @@ func TestGenerate3SAT(t *testing.T) {
 		f, err := GenerateUniform3SAT(1, 10, nil)
 		require.NoError(t, err)
 		require.Len(t, f.C, 1)
-		fmt.Println(f)
 	})
 
 	t.Run("m=3,n=9", func(t *testing.T) {
 		f, err := GenerateUniform3SAT(3, 9, nil)
 		require.NoError(t, err)
 		require.Len(t, f.C, 3)
-		fmt.Println(f)
 	})
 
 	t.Run("always the same", func(t *testing.T) {
