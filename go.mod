@@ -1,4 +1,4 @@
-module satsolver
+module github.com/Harrison-Miller/satsolver
 
 go 1.17
 

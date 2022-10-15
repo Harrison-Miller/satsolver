@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/Harrison-Miller/satsolver"
 	"os"
-	"satsolver"
 	"strconv"
 )
 

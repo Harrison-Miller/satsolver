@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"github.com/Harrison-Miller/satsolver"
 	"os"
-	"satsolver"
 	"strings"
 )
 
